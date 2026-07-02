@@ -8,3 +8,4 @@ class Solution:
             sum2 = max(sum2, sum1)
 
         return sum2
+        
