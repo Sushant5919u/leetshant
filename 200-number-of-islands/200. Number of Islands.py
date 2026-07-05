@@ -18,7 +18,6 @@ class Solution:
             dfs(r + 1, c)   # Down
             dfs(r, c - 1)   # Left
             dfs(r, c + 1)   # Right
-        island=0
         rows = len(grid)
         cols = len(grid[0])
 
