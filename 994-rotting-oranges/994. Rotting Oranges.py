@@ -19,9 +19,7 @@ class Solution:
             level_size=len(queue)
             for i in range(level_size):
                 r,c=queue.popleft()
-                directions = [
-                (-1,0),
-                (1,0),(0,-1),(0,1)]
+                directions = [(-1,0),(1,0),(0,-1),(0,1)]
                 for dr, dc in directions:
                     nr = r + dr
                     nc = c + dc 
