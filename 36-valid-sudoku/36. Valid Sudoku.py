@@ -1,48 +1,17 @@
-
 class Solution:
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
+        rows=[set() for _ in range(9)]
+        col=[set() for _ in range(9)]
+        box=[set() for _ in range(9)]
+        for i in range(9):
+            for j in range(9):
 
-     
-        def has_duplicate(items):
-            seen = set()
-
-            for num in items:
-                if num == ".":
+                if board[i][j]=='.':
                     continue
-
-                if num in seen:
-                    return True
-
-                seen.add(num)
-
-            return False
-
-     
-        for row in board:
-            if has_duplicate(row):
-                return False
-
-      
-        for col in range(9):
-            column = []
-
-            for row in range(9):
-                column.append(board[row][col])
-
-            if has_duplicate(column):
-                return False
-
-        
-        for start_row in (0, 3, 6):
-            for start_col in (0, 3, 6):
-                box = []
-
-                for r in range(start_row, start_row + 3):
-                    for c in range(start_col, start_col + 3):
-                        box.append(board[r][c])
-
-                if has_duplicate(box):
+                idx=(i//3)*3+(j//3)
+                if board[i][j] in rows[i] or board[i][j] in col[j] or board[i][j] in box[idx]:
                     return False
-
-        
+                rows[i].add(board[i][j])
+                col[j].add(board[i][j])
+                box[idx].add(board[i][j])
         return True
