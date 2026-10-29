@@ -3,10 +3,8 @@ class Solution:
         a=sorted(intervals,key=lambda x: x[1] )
         count = 0
         last_end = float("-inf")
-
         for s, e in a:
-            if s >= last_end:
-                
+            if s >= last_end:  
                 last_end = e
             else:
                 count += 1
