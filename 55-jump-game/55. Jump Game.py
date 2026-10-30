@@ -1,27 +1,8 @@
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        a = 0
-        b = len(nums) - 1
-        for i, j in enumerate(nums):
-            if i > a:
+        limit=0
+        for i in range(len(nums)):
+            if i>limit:
                 return False
-            a = max(a, i + j)
-            if a >= b:
-                return True  
-        return a >= b
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+            limit=max(limit,i+nums[i])
+        return True
