@@ -7,8 +7,6 @@ class Solution:
         total=0
         for i in range(len(gas)):
             total+=gas[i]-cost[i]
-            # total+=d
-            # curr+=d
             if total<0:
                 start=i+1
                 total=0
