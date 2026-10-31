@@ -1,0 +1,11 @@
+class Solution:
+    def wiggleMaxLength(self, nums: list[int]) -> int:
+        if not nums:
+            return 0
+        up=down=1
+        for i in range(1,len(nums)):
+            if nums[i-1]<nums[i]:
+                up=down+1
+            if nums[i-1]>nums[i]:
+                down=up+1
+        return max(up,down)        
