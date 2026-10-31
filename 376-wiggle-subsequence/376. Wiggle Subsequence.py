@@ -6,6 +6,6 @@ class Solution:
         for i in range(1,len(nums)):
             if nums[i-1]<nums[i]:
                 up=down+1
-            if nums[i-1]>nums[i]:
+            elif nums[i-1]>nums[i]:
                 down=up+1
         return max(up,down)        
