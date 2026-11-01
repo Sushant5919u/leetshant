@@ -5,6 +5,6 @@ class Solution:
         for i in nums:
             if i != val:
                 a.append(i)
-        for i in range(len(a)):
-            nums[i] = a[i]
+        # for i in range(len(a)):
+        nums[:] = a
         return len(a)
