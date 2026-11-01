@@ -1,10 +1,11 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         a=float('inf')
-        b=0
+        b=float('-inf')
         for i in prices:
-            if i<a:
+            if i <a:
                 a=i
             if i-a>b:
                 b=i-a
         return b
+
