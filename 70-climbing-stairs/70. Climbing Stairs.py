@@ -1,7 +1,9 @@
-import math
-
 class Solution:
     def climbStairs(self, n: int) -> int:
-        sqrt5 = math.sqrt(5)
-        phi = (1 + sqrt5) / 2
-        return round((phi ** (n + 1)) / sqrt5)
+        if n<=3 and n>=0:
+            return n
+        prev=1
+        prev2=2
+        for i in range(2,n):
+            prev,prev2=prev2,prev+prev2
+        return prev2
